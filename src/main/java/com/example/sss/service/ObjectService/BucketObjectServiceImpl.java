@@ -1,6 +1,6 @@
 package com.example.sss.service.ObjectService;
 
-import com.example.sss.model.domin.BucketObject;
+import com.example.sss.model.utils.BucketObject;
 import com.obs.services.ObsClient;
 import com.obs.services.model.*;
 import com.obs.services.model.fs.*;

@@ -1,4 +1,4 @@
-package com.example.sss.model.domin;
+package com.example.sss.model.utils;
 
 import com.obs.services.ObsClient;
 

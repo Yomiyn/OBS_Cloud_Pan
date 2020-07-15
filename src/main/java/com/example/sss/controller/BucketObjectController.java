@@ -1,9 +1,7 @@
 package com.example.sss.controller;
 
 
-import com.example.sss.model.domin.BucketObject;
 import com.example.sss.service.ObjectService.BucketObjectService;
-import com.example.sss.service.ObsService.ObsService;
 import com.obs.services.model.ObsObject;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
