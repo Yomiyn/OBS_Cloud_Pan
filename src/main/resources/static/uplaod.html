@@ -43,6 +43,13 @@
             , data: {
                 id: function () {
                     return sessionStorage.getItem("id");
+                },
+                path: function () {
+                    if(sessionStorage.getItem("filePath")!=""){
+                        return sessionStorage.getItem("filePath")+"/";
+                    }else {
+                        return sessionStorage.getItem("filePath");
+                    }
                 }
             }
             , choose: function (obj) {

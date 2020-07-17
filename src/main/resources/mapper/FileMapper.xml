@@ -19,8 +19,8 @@
 
     <!--select id="selectFileListByType"  resultMap="BaseResultMap" parameterType="com.example.sss.model.domin.ObsFile"-->
     <select id="selectFileListByType" resultMap="BaseResultMap">
-        select * from bos_file
-        while user_id=#{userId} and type=#{type}
+        select * from obs_file
+        where user_id=#{userId} and type=#{type}
     </select>
 
     <!--select id="selectFileListByName"  resultMap="BaseResultMap" parameterType="com.example.sss.model.domin.ObsFile"-->
@@ -29,10 +29,14 @@
         where user_id=#{userId} and file_name like concat('%',#{name},'%')
     </select>
 
-    <!--select id="selectFileByName"  resultMap="BaseResultMap" parameterType="com.example.sss.model.domin.ObsFile"-->
-    <select id="selectFileByName" resultMap="BaseResultMap">
+    <select id="getFileByPath" resultMap="BaseResultMap">
         SELECT * FROM obs_file
-        where user_id=#{userId} and file_name=#{name}
+        where user_id=#{userId} and path=#{path}
+    </select>
+
+    <select id="getFileByFileId" resultMap="BaseResultMap">
+        select * from obs_file
+        where file_id=#{id}
     </select>
 
     <insert id="addFile">
@@ -43,6 +47,11 @@
             (file_name,file_state,make_time,path,size,type,user_id)
             values (#{fileName},#{fileState},#{makeTime},#{path},#{size},#{type},#{userId})
     </insert>
+
+    <delete id="deleteDir">
+        delete from obs_file
+        where user_id=#{userId} and path like concat(#{path},'%')
+    </delete>
 
     <delete id="deleteFile">
         delete from obs_file
